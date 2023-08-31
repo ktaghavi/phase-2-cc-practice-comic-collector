@@ -1,10 +1,12 @@
-import Comic from "./Comic"
+import ComicCard from "./ComicCard"
 
-function ComicsContainer() {
-
+function ComicsContainer({comics, deleteComic}) {
+  
+  
   return (
+    //Map over the comics array and send each individual comic to the Comic component
     <>
-      <Comic />
+      {comics.map(comic => <ComicCard key={comic.id} comic={comic} deleteComic={deleteComic}/>)}
     </>
   )
 
